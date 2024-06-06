@@ -1,0 +1,19 @@
+# 用户Web服务 地址和端口
+UserWebServerIPPort = "0.0.0.0:80"
+
+# SMP连接地址和端口
+SMPConnectIPPort = "127.0.0.1:47554"
+
+# 设备连接 地址和端口
+DEVConnectIPPort = "0.0.0.0:47555"
+
+# Sqlite数据库文件
+SqliteDBFile = "elife.sqlite3"
+
+# 日志级别： DEBUG / INFO / OFF
+LogLevel = "INFO" 
+
+# 服务端对外访问地址，比如 "http://192.168.5.156", "https://192.168.5.156" 
+# 缺省为空字符串，rc-scp 会自动获取请求里面的host
+# 但是生产环境下，往往有反向代理，对外地址和内部地址不一致，需要填写
+ServerExternelAddr = "" 

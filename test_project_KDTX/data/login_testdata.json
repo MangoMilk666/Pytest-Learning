@@ -1,0 +1,22 @@
+[
+  { "username": "",
+    "password": "HM_2023_test",
+    "code": "2",
+    "message": "错误",
+    "msg": "用户名或密码错误"},
+  { "username": "jack666",
+    "password": "HM_2023_test",
+    "code": "2",
+    "message": "错误",
+    "msg": "用户名或密码错误"},
+  { "username": "admin",
+    "password": "",
+    "code": "2",
+    "message": "错误",
+    "msg": "用户名或密码错误"},
+  { "username": "admin",
+    "password": "123456",
+    "code": "2",
+    "message": "错误",
+    "msg": "用户名或密码错误"}
+]

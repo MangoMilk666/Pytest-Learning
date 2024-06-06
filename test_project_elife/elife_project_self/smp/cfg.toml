@@ -1,0 +1,9 @@
+# Web服务 地址和端口
+WebServerIPPort = "0.0.0.0:8234"
+
+# SCP 对SMP提供的 服务 地址和端口
+SCPServerIPPort = "127.0.0.1:47554"
+
+# 日志级别： DEBUG / INFO / OFF
+LogLevel = "INFO" 
+

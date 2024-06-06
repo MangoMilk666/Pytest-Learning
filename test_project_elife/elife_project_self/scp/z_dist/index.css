@@ -1,0 +1,283 @@
+/* 通用样式 */
+.hidden{
+  display: none !important;
+}
+
+
+input{    
+  height: 1.3rem;
+  border: 1px solid gray;
+}
+
+.input-l{
+  width: 10rem;
+}
+
+.input-xl{
+  width: 20rem;
+}
+
+.btn{
+  background-color: #218a8a;
+  padding: .2rem .4rem;
+  color: white;
+  cursor: pointer;
+  font-size: .8rem;
+  min-width: 3rem;
+  text-align: center;
+  user-select: none;
+}
+
+
+.btn-no-border{
+  cursor: pointer;
+  color: #296cff;
+  font-size: .8rem;
+  padding: .2rem .4rem;
+  /* border: 1px solid whitesmoke; */
+  user-select: none;
+}
+
+.btn-no-border:hover{
+  border: 1px solid #218a8a;
+}
+
+
+.btn-no-border.disable{
+  cursor: auto;
+  color: grey;
+}
+.btn-no-border.disable:hover{
+  color: grey;
+  border: 1px solid whitesmoke;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+
+/* 功能区设置 */
+body{
+  height: 100vh;
+  /* max-width: 1250px; */
+  margin: 0 auto;
+  display: grid;
+  /* gap: 5px; */
+  grid-template-rows:  auto 1fr auto;
+  grid-template-columns: 1fr;
+}     
+
+
+.nav-logo{
+  border-left: 1px solid #e5eaef;
+  color:green
+}
+.menu-item{
+  cursor: pointer;
+}
+
+
+
+
+
+/* 主内容区 */
+main{
+  /* background: #f9f9f9; */
+  padding: 1rem;
+  font-size: .9rem;
+}
+
+
+.result-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result-list-item {
+  border-bottom: 1px solid #f0ecec;
+  padding: 1rem 1rem;
+  width: 90%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+.field {
+  display: flex;
+}
+
+
+
+
+
+/* 页脚 */
+.footer-left{
+  border-left: 1px solid #e5eaef;
+}
+footer{
+  background: #fcfcfc;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/* home 模块 */
+.home {  
+  display: grid;
+  /* gap: 5px; */
+  grid-template-rows:  auto auto 1fr ;
+  grid-template-columns: 1fr;
+}
+
+
+.functions {  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content : space-around;
+
+  gap: 1rem;
+}
+
+.block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 25%;
+  height: 5rem;
+  background-color: #ffeedd;
+  cursor: pointer;
+  color: #d25959;
+  font-weight: bolder;
+}
+
+
+.block > icon{  
+  width: 1rem;
+  height: 1rem;
+  background-color: papayawhip;
+  border: 1px solid gray;
+}
+
+
+.news {  
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+
+  margin: 3rem 1rem;
+  color: #03a9f4;
+
+}
+
+
+.news-item {  
+  cursor: pointer;
+}
+
+
+
+.device-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  margin: 0.2rem;
+  text-align: center;
+  gap: 1rem;
+  width: 25%;
+  height: 5rem;
+
+  cursor: pointer;
+  font-size: .8rem;
+  padding: .2rem .4rem;
+  border: 1px solid #e5eaef;
+  user-select: none;
+}
+
+.device-block .icon {
+  font-size: 2rem;
+}
+
+
+
+.home-slide {
+  position: relative;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.home-slide .trigger {
+  z-index: 10;
+  bottom: 0;
+}
+
+
+
+.home-slide .trigger span {
+  display: inline-block;
+  margin-left: 10px;
+  width: 12px;
+  height: 12px;
+  /* border: 2px solid transparent; */
+  border-radius: 50%;
+  background-color: #f5f2f2;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.home-slide .trigger span.on {
+  border-width: 0;
+  border-color: transparent;
+  background-color: #eccfcf;
+  /* background-image: url(/assets/images/icon_slide_selected.png); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* transform: scale(1.8); */
+}
+
+
+/* 自定义字体 */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/fonts/icomoon.woff?e22eba') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-power-socket-uk:before {
+  content: "\f07e8";
+}
+
+.icon-car:before {
+  content: "\f0b3";
+}

@@ -1,0 +1,76 @@
+<!doctype html><html><head><meta charset="utf-8"><title>登录</title><style>input {    
+      border: 1px solid #bdd7e3;      
+      height: 1.2rem;
+      width: 10rem;
+      font-size: .9rem;
+      font-family: consolas;
+      text-align: center;
+    }
+
+    input:focus{
+      outline: none;
+    }
+
+    body{
+      background-color: #e9ecef;
+    }
+
+    main{
+      background-color: whitesmoke;
+      width: 25rem;
+      margin: auto;
+      margin-top:20vh;
+      text-align:center;
+    }</style><script>async function login(){
+
+      let username = document.querySelector('#username').value.trim()
+      let password = document.querySelector('#password').value.trim()
+
+      if (username.length === 0)  {
+        alert('请输入用户名')
+        return
+      }
+      if (password.length === 0)  {
+        alert('请输入密码')
+        return
+      }
+
+      let response = await fetch(
+        '/api/operator_login', 
+        {      
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            username: username, 
+            password:password})
+        })
+
+      if (response.status !==200){
+        alert('HTTP 错误 : ' + response.status );
+        throw 'HTTP 错误 : ' + response.status 
+      }
+      
+      let data = await response.json();
+
+      if (data.ret === 0){
+        
+	      sessionStorage.elifeToken = data.token
+	      sessionStorage.nickname = data.nickname
+        location.href = '/index.html'          
+      }
+      else{
+        alert('登录失败： ' + data.msg)
+      }
+    }
+
+
+    window.onload = () => {
+      document.querySelector('#loginBtn').onclick = login
+      document.querySelector('#username').onkeydown  = async e=>{
+        if (e.key==='Enter') login()
+      }
+      
+      document.querySelector('#password').onkeydown  = async e=>{
+        if (e.key==='Enter') login()
+      }
+    };</script></head><body><main><br><div style="display: flex; justify-content: center;gap:1rem"><span style="font-size:1.6rem">⚡</span> <span style="font-size:1.8rem">Elife管理台</span></div><p>输入用户名、密码登录</p><div><input placeholder="用户名" id="username"></div><br><div><input type="password" placeholder="密码" id="password"></div><br><div><button id="loginBtn">登录</button></div><br><div></div><br></main></body></html>
