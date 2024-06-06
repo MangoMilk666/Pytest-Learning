@@ -96,15 +96,3 @@ class CalculatorProxy:
 
 
 
-
-
-
-
-
-
-
-
-        result = self.cal_proxy.get_result()
-        return result
-
-
